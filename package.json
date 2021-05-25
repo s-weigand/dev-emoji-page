@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "eslint": "eslint . --ext .ts,.tsx --fix",
-    "build": "parcel build src/index.html --dist-dir deploy --no-source-maps"
+    "build": "parcel build src/index.html --dist-dir deploy --no-source-maps",
+    "gh-pages": "parcel build src/index.html --dist-dir deploy --no-source-maps --public-url https://s-weigand.github.io/dev-emoji-page/"
   },
   "author": "Sebastian Weigand",
   "license": "Apache-2.0",

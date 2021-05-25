@@ -36,9 +36,9 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-      - name: Build Page
+      - name: Build Github-Pages
         run: |
-          npm run build
+          npm run gh-pages
 
       - name: Deploy to GitHub Pages
         if: success()
