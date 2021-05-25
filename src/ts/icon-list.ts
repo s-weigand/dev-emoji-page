@@ -5,6 +5,7 @@ export interface IDevIcon {
 
 export const iconList: Array<IDevIcon> = [
   { icon: '✨', usage: 'Feature' },
+  { icon: '👌', usage: 'Improve' },
   { icon: '🧪', usage: 'Tests' },
   { icon: '♻️', usage: 'Refactor' },
   { icon: '🧹', usage: 'Cleanup' },
@@ -15,6 +16,7 @@ export const iconList: Array<IDevIcon> = [
   { icon: '💬', usage: 'Question' },
   { icon: '🤔', usage: 'Idea' },
   { icon: '🚧', usage: 'Maintain' },
+  { icon: '🗑️', usage: 'Deprecate' },
   { icon: '🔧', usage: 'Tooling' },
   { icon: '🚇', usage: 'Infra' },
   { icon: '⬆️', usage: 'Update' },
