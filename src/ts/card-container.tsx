@@ -38,10 +38,13 @@ export function IconCards(): React.ReactElement<typeof ThemeProvider> {
       </div>
     )
   }
-  console.log(cards)
   return (
     <ThemeProvider theme={getTheme()}>
-      <a className="gh-link" href="http://localhost:1234/" target="_blank">
+      <a
+        className="gh-link"
+        href="https://github.com/s-weigand/dev-emoji-page/tree/gh-pages"
+        target="_blank"
+      >
         <Typography color="textPrimary" variant="h3" align="center">
           <GitHub fontSize="large" /> Dev icons
         </Typography>
