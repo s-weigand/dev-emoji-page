@@ -1,11 +1,12 @@
 import React from 'react'
+
 import { createMuiTheme, ThemeProvider, Theme } from '@material-ui/core/styles'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Typography from '@material-ui/core/Typography'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Github from '@material-ui/icons/Github'
 
-import { iconList } from './icon-list'
 import { IconCard } from './icon-card'
+import { iconList } from './icon-list'
 
 const getTheme = (): Theme => {
   let prefersDarkMode = false
