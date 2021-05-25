@@ -5,8 +5,7 @@ body {
 
 main {
   padding-top: 0.5rem;
-  height: calc(100vh - 0.5rem);
-  width: 100vw;
+  min-height: calc(100vh - 0.5rem);
 }
 .card-container {
   display: flex;
