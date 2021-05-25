@@ -3,7 +3,7 @@ import React from 'react'
 import { createMuiTheme, ThemeProvider, Theme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import Github from '@material-ui/icons/Github'
+import GitHub from '@material-ui/icons/GitHub'
 
 import { IconCard } from './icon-card'
 import { iconList } from './icon-list'
@@ -43,7 +43,7 @@ export function IconCards(): JSX.Element {
     <ThemeProvider theme={getTheme()}>
       <a className="gh-link" href="http://localhost:1234/" target="_blank">
         <Typography color="textPrimary" variant="h3" align="center">
-          <Github fontSize="large" /> Dev icons
+          <GitHub fontSize="large" /> Dev icons
         </Typography>
       </a>
       <br />
