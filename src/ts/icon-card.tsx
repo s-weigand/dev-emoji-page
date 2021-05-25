@@ -28,7 +28,9 @@ export interface IIconCardProps {
   devIcon: IDevIcon
 }
 
-export function IconCard({ devIcon }: IIconCardProps): JSX.Element {
+export function IconCard({
+  devIcon,
+}: IIconCardProps): React.ReactElement<typeof Tooltip> {
   const classes = useStyles()
   const { icon, usage } = devIcon
 

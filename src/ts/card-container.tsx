@@ -28,7 +28,7 @@ const getTheme = (): Theme => {
   return theme
 }
 
-export function IconCards(): JSX.Element {
+export function IconCards(): React.ReactElement<typeof ThemeProvider> {
   const cards = []
 
   for (const devIcon of iconList) {
