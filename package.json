@@ -1,0 +1,37 @@
+{
+  "name": "dev-emojis",
+  "private": true,
+  "version": "1.0.0",
+  "description": "My helper website with dev icons",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "eslint": "eslint . --ext .ts,.tsx --fix",
+    "build": "parcel build src/index.html --dist-dir deploy --no-source-maps"
+  },
+  "author": "Sebastian Weigand",
+  "license": "Apache-2.0",
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.3.1",
+    "@types/react": "^17.0.7",
+    "@types/react-dom": "^17.0.5",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "parcel": "^2.0.0-beta.3.1",
+    "prettier": "^2.3.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
