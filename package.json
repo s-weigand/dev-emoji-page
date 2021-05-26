@@ -2,7 +2,25 @@
   "name": "dev-emojis",
   "private": true,
   "version": "1.0.0",
-  "description": "My helper website with dev icons",
+  "description": "My helper app with dev icons",
+  "pwaManifest": {
+    "name": "Dev Emojis PWA",
+    "shortName": "Dev Emojis",
+    "startURL": "./offline",
+    "theme": "#add8e6",
+    "generateIconOptions": {
+      "baseIcon": "src/assets/icon-512x512.png",
+      "sizes": [
+        192,
+        384,
+        512
+      ],
+      "genFavicons": true,
+      "purpose": [
+        "maskable"
+      ]
+    }
+  },
   "scripts": {
     "dev": "parcel src/index.html",
     "eslint": "eslint . --ext .ts,.tsx --fix",

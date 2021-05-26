@@ -43,6 +43,7 @@ export function IconCards(): React.ReactElement<typeof ThemeProvider> {
       <Typography color="textPrimary" variant="h3" align="center">
         <a
           className="gh-link"
+          rel="noreferrer"
           href="https://github.com/s-weigand/dev-emoji-page"
           target="_blank"
         >
