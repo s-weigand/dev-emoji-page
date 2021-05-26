@@ -7,7 +7,8 @@
     "dev": "parcel src/index.html",
     "eslint": "eslint . --ext .ts,.tsx --fix",
     "build": "parcel build src/index.html --dist-dir deploy --no-source-maps",
-    "gh-pages": "parcel build src/index.html --dist-dir deploy --no-source-maps --public-url https://s-weigand.github.io/dev-emoji-page/"
+    "gh-pages": "parcel build src/index.html --dist-dir deploy --no-source-maps --public-url https://s-weigand.github.io/dev-emoji-page/",
+    "clean": "rimraf dist deploy .parcel-cache"
   },
   "author": "Sebastian Weigand",
   "license": "Apache-2.0",
@@ -29,6 +30,7 @@
     "parcel": "^2.0.0-beta.3.1",
     "parcel-reporter-static-files-copy": "^1.3.0",
     "prettier": "^2.3.0",
+    "rimraf": "^3.0.2",
     "typescript": "^4.2.4"
   },
   "dependencies": {
