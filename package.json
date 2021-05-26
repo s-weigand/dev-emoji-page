@@ -36,6 +36,7 @@
     "singleQuote": true
   },
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.0.0-beta.3.1",
     "@parcel/transformer-sass": "^2.0.0-beta.3.1",
     "@types/react": "^17.0.7",
     "@types/react-dom": "^17.0.5",
@@ -46,6 +47,7 @@
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-prettier": "^3.4.0",
     "parcel": "^2.0.0-beta.3.1",
+    "parcel-config-pwa-manifest": "^0.0.9",
     "parcel-reporter-static-files-copy": "^1.3.0",
     "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
