@@ -11,13 +11,18 @@
     "generateIconOptions": {
       "baseIcon": "src/assets/icon-512x512.png",
       "sizes": [
+        144,
         192,
         384,
         512
       ],
       "genFavicons": true,
+      "development": {
+        "disabled": true
+      },
       "purpose": [
-        "maskable"
+        "maskable",
+        "any"
       ]
     }
   },
