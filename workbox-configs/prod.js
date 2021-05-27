@@ -6,5 +6,5 @@ module.exports = {
   skipWaiting: true,
   sourcemap: false,
   mode: 'production',
-  navigateFallback: 'index.html',
+  navigateFallback: 'dev-emoji-page/index.html',
 }
