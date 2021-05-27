@@ -7,7 +7,7 @@
     "name": "Dev Emojis PWA",
     "shortName": "Dev Emojis",
     "startURL": ".",
-    "theme": "#add8e6",
+    "theme": "#424242",
     "generateIconOptions": {
       "baseIcon": "src/assets/icon.png",
       "sizes": [
