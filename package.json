@@ -40,7 +40,7 @@
     "build:sw-prod": "workbox generateSW workbox-configs/prod.js",
     "gh-pages": "run-s clean parcel:gh-pages build:sw-prod post_process:gh-pages",
     "move-index2": "mv deploy/index2.html deploy/index.html",
-    "post_process:gh-pages": "python utils/post_build.py fix-index-html",
+    "post_process:gh-pages": "python utils/post_build.py fix-all",
     "clean": "run-s clean:del clean:mkdir",
     "clean:mkdir": "mkdir dist deploy",
     "clean:del": "rimraf dist deploy .parcel-cache"
