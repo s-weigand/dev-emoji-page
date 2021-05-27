@@ -38,6 +38,8 @@ def fix_manifest():
     manifest = json.loads(MANIFEST_FILE.read_text())
     for icon in manifest["icons"]:
         icon["src"] = f"{PUBLIC_URL}{icon['src']}"
+    manifest["start_url"] = f"{PUBLIC_URL}/index.html"
+    manifest["scope"] = f"{PUBLIC_URL}/"
     MANIFEST_FILE.write_text(json.dumps(manifest))
 
 
