@@ -1,4 +1,4 @@
-# Click to copy [website](https://s-weigand.github.io/dev-emoji-page/) for emoji I often used in commits, issues and PRs
+# Click to copy [website/PWA](https://s-weigand.github.io/dev-emoji-page/) for emoji I often used in commits, issues and PRs
 
 I just got annoyed by copy-pasting emojis manually and each time dragging a markdown file
 which was on my desktop in my editor to do so.
