@@ -9,7 +9,7 @@
     "startURL": "./offline",
     "theme": "#add8e6",
     "generateIconOptions": {
-      "baseIcon": "src/assets/icon-512x512.png",
+      "baseIcon": "src/assets/icon.png",
       "sizes": [
         144,
         192,
@@ -27,11 +27,19 @@
     }
   },
   "scripts": {
-    "dev": "parcel src/index.html",
+    "dev": "run-p parcel:dev build:sw-dev",
+    "parcel:dev": "parcel src/index2.html",
     "eslint": "eslint . --ext .ts,.tsx --fix",
-    "build": "parcel build src/index.html --dist-dir deploy --no-source-maps",
-    "gh-pages": "parcel build src/index.html --dist-dir deploy --no-source-maps --public-url https://s-weigand.github.io/dev-emoji-page/",
-    "clean": "rimraf dist deploy .parcel-cache"
+    "build": "run-s clean parcel:prod build:sw-prod move-index2",
+    "parcel:prod": "parcel build src/index2.html --dist-dir deploy --no-source-maps",
+    "parcel:gh-pages": "parcel build src/index2.html --dist-dir deploy --no-source-maps --public-url https://s-weigand.github.io/dev-emoji-page/",
+    "build:sw-dev": "workbox generateSW workbox-configs/dev.js --watch",
+    "build:sw-prod": "workbox generateSW workbox-configs/prod.js",
+    "gh-pages": "run-s clean parcel:gh-pages build:sw-prod move-index2",
+    "move-index2": "mv deploy/index2.html deploy/index.html",
+    "clean": "run-s clean:del clean:mkdir",
+    "clean:mkdir": "mkdir dist deploy",
+    "clean:del": "rimraf dist deploy .parcel-cache"
   },
   "author": "Sebastian Weigand",
   "license": "Apache-2.0",
@@ -51,12 +59,14 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-prettier": "^3.4.0",
+    "npm-run-all": "^4.1.5",
     "parcel": "^2.0.0-beta.3.1",
     "parcel-config-pwa-manifest": "^0.0.9",
     "parcel-reporter-static-files-copy": "^1.3.0",
     "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "workbox-cli": "^6.1.5"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",

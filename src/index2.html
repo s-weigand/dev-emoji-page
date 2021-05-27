@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev emojis</title>
+    <link rel="stylesheet" href="./scss/style.scss" />
+    <script src="./ts/index.tsx" defer></script>
+  </head>
+  <body></body>
+  <noscript>Your browser does not support JavaScript!</noscript>
+  <main class="MuiPaper-root"></main>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        // a lil trick so parcel won't fail to generate the path
+        navigator.serviceWorker
+          .register(['./sw', '.js'].join(''))
+          .then((registration) => {
+            console.log(
+              'Registration successful, scope is:',
+              registration.scope
+            )
+          })
+          .catch((error) => {
+            console.log('Service worker registration failed, error:', error)
+          })
+      })
+    }
+  </script>
+</html>
