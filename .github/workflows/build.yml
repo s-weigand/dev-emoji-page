@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: main
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Run pre-commit
         uses: pre-commit/action@v2.0.3
 
-  deploy-page:
+  build:
     needs: [pre-commit]
     runs-on: ubuntu-latest
     steps:
@@ -39,6 +39,24 @@ jobs:
       - name: Build Github-Pages
         run: |
           npm run gh-pages
+
+      - name: Upload bundled page
+        if: success()
+        uses: actions/upload-artifact@v2
+        with:
+          name: deploy
+          path: deploy
+
+  deploy-page:
+    if: github.event_name == 'push' && github.event.ref == 'refs/heads/main'
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download  bundled page
+        uses: actions/download-artifact@v2
+        with:
+          name: deploy
+          path: deploy
 
       - name: Deploy to GitHub Pages
         if: success()
