@@ -40,6 +40,10 @@ jobs:
         run: |
           npm run gh-pages
 
+      - name: Show index.html
+        run: |
+          cat deploy/index.html
+
       - name: Upload bundled page
         if: success()
         uses: actions/upload-artifact@v2
