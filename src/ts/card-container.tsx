@@ -40,15 +40,16 @@ export function IconCards(): React.ReactElement<typeof ThemeProvider> {
   }
   return (
     <ThemeProvider theme={getTheme()}>
-      <a
-        className="gh-link"
-        href="https://github.com/s-weigand/dev-emoji-page/tree/gh-pages"
-        target="_blank"
-      >
-        <Typography color="textPrimary" variant="h3" align="center">
-          <GitHub fontSize="large" /> Dev icons
-        </Typography>
-      </a>
+      <Typography color="textPrimary" variant="h3" align="center">
+        <a
+          className="gh-link"
+          href="https://github.com/s-weigand/dev-emoji-page"
+          target="_blank"
+        >
+          <GitHub fontSize="large" />
+        </a>
+        &nbsp;Dev icons
+      </Typography>
       <br />
       <div className="wrapper">
         <div className="card-container">{cards}</div>

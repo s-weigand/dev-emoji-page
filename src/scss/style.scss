@@ -17,5 +17,9 @@ main {
 }
 
 a.gh-link {
-  text-decoration: none;
+  &,
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
 }
