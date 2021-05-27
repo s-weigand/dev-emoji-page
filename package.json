@@ -6,7 +6,7 @@
   "pwaManifest": {
     "name": "Dev Emojis PWA",
     "shortName": "Dev Emojis",
-    "startURL": "./offline",
+    "startURL": ".",
     "theme": "#add8e6",
     "generateIconOptions": {
       "baseIcon": "src/assets/icon.png",
@@ -19,6 +19,9 @@
       "genFavicons": true,
       "development": {
         "disabled": true
+      },
+      "production": {
+        "scope": "dev-emoji-page/"
       },
       "purpose": [
         "maskable",
