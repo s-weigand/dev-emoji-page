@@ -10,11 +10,16 @@ from pygments.formatters.terminal import TerminalFormatter
 from yaargh import ArghParser
 
 
-DEPLOY_DIR = Path(__file__).parent.parent / "deploy"
+REPO_ROOT = Path(__file__).parent.parent
+
+DEPLOY_DIR = REPO_ROOT / "deploy"
+GITHUB_HANDEL = json.loads((REPO_ROOT / "package.json").read_text(encoding="utf8"))[
+    "config"
+]["gh_handle"]
 SRC_FILE = DEPLOY_DIR / "index2.html"
 DEST_FILE = DEPLOY_DIR / "index.html"
 MANIFEST_FILE = DEPLOY_DIR / "manifest.webmanifest"
-PUBLIC_URL = r"https://s-weigand.github.io/dev-emoji-page"
+PUBLIC_URL = fr"https://{GITHUB_HANDEL}.github.io/dev-emoji-page"
 
 
 def fix_index_html():
@@ -29,7 +34,9 @@ def fix_index_html():
         elif meta_tag.has_attr("href") and meta_tag["href"].startswith("/"):
             meta_tag["href"] = f"{PUBLIC_URL}{meta_tag['href']}"
 
-    DEST_FILE.write_text(str(soup))
+    hard_coded_url = r"https://s-weigand.github.io/dev-emoji-page"
+    html_content = str(soup).replace(hard_coded_url, PUBLIC_URL)
+    DEST_FILE.write_text(html_content)
     SRC_FILE.unlink(missing_ok=True)
 
 

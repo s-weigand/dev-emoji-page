@@ -44,7 +44,7 @@ export function IconCards(): React.ReactElement<typeof ThemeProvider> {
         <a
           className="gh-link"
           rel="noreferrer"
-          href="https://github.com/s-weigand/dev-emoji-page"
+          href={`https://github.com/${process.env.GH_HANDEL}/dev-emoji-page`}
           target="_blank"
         >
           <GitHub fontSize="large" />

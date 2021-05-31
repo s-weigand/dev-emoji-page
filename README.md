@@ -11,8 +11,9 @@ but ofc. that is up to taste and might even cause issues on some systems dependi
 To make it your own, you can simply:
 
 - Fork this repo
+- Replace `config.gh_handle` in `package.json` with your handle
 - Change the [`iconList`](https://github.com/s-weigand/dev-emoji-page/blob/main/src/ts/icon-list.ts)
-- Replace the [repo link](https://github.com/s-weigand/dev-emoji-page/blob/main/src/ts/card-container.tsx)
+- Push it to your `main` branch and wait for the CI to deploy you gh-pages
 
 ## Credits
 
