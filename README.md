@@ -15,6 +15,17 @@ To make it your own, you can simply:
 - Change the [`iconList`](https://github.com/s-weigand/dev-emoji-page/blob/main/src/ts/icon-list.ts)
 - Push it to your `main` branch and wait for the CI to deploy you gh-pages
 
+# Development
+
+1. Clone your fork
+1. Install the dependencies (`npm ci`)
+1. Run the parcel dev server (`npm run dev`)
+
+## Windows
+
+For the build scripts tp properly work on windows you need to use WSL2 or
+[set git bash as `script-shell` for `npm`](https://stackoverflow.com/a/46006249/3990615)
+
 ## Credits
 
 This use of emojis is inspired by
