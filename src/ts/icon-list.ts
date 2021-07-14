@@ -4,6 +4,8 @@ export interface IDevIcon {
 }
 
 export const iconList: Array<IDevIcon> = [
+  { icon: '✔️', usage: 'Success' },
+  { icon: '❌', usage: 'Fail' },
   { icon: '✨', usage: 'Feature' },
   { icon: '👌', usage: 'Improve' },
   { icon: '🧪', usage: 'Tests' },
