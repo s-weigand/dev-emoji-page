@@ -1,34 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { createMuiTheme, ThemeProvider, Theme } from '@material-ui/core/styles'
+import IconButton from '@material-ui/core/IconButton'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import Brightness3Icon from '@material-ui/icons/Brightness3'
+import Brightness7Icon from '@material-ui/icons/Brightness7'
 import GitHub from '@material-ui/icons/GitHub'
 
 import { IconCard } from './icon-card'
 import { iconList } from './icon-list'
 
-const getTheme = (): Theme => {
-  let prefersDarkMode = false
+const prefersDarkMode = (): boolean => {
+  let darkMode = false
   try {
-    prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark').matches
+    darkMode = window.matchMedia('(prefers-color-scheme: dark').matches
   } catch {
     try {
-      prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+      darkMode = useMediaQuery('(prefers-color-scheme: dark)')
     } catch (error) {
       console.log(`Failed to get color-scheme: ${error}`)
     }
   }
-
-  const theme = createMuiTheme({
-    palette: {
-      type: prefersDarkMode ? 'dark' : 'light',
-    },
-  })
-  return theme
+  return darkMode
 }
 
-export function IconCards(): React.ReactElement<typeof ThemeProvider> {
+const darkTheme = createMuiTheme({
+  palette: {
+    type: 'dark',
+  },
+})
+const lightTheme = createMuiTheme({
+  palette: {
+    type: 'light',
+  },
+})
+
+export const IconCards = (): React.ReactElement<typeof ThemeProvider> => {
+  const [useDarkmode, setUseDarkmMode] = useState(prefersDarkMode())
   const cards = []
 
   for (const devIcon of iconList) {
@@ -39,7 +48,7 @@ export function IconCards(): React.ReactElement<typeof ThemeProvider> {
     )
   }
   return (
-    <ThemeProvider theme={getTheme()}>
+    <ThemeProvider theme={useDarkmode ? darkTheme : lightTheme}>
       <Typography color="textPrimary" variant="h3" align="center">
         <a
           className="gh-link"
@@ -49,7 +58,18 @@ export function IconCards(): React.ReactElement<typeof ThemeProvider> {
         >
           <GitHub fontSize="large" />
         </a>
-        &nbsp;Dev icons
+        &nbsp;Dev icons&nbsp;
+        <IconButton
+          onClick={() => {
+            setUseDarkmMode(!useDarkmode)
+          }}
+        >
+          {useDarkmode ? (
+            <Brightness7Icon fontSize="large" />
+          ) : (
+            <Brightness3Icon fontSize="large" />
+          )}
+        </IconButton>
       </Typography>
       <br />
       <div className="wrapper">
