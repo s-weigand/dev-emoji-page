@@ -22,6 +22,7 @@ export const iconList: Array<IDevIcon> = [
   { icon: '🔧', usage: 'Tooling' },
   { icon: '🚇', usage: 'Infra' },
   { icon: '⬆️', usage: 'Update' },
+  { icon: '🎨', usage: 'Style' },
   { icon: '🚀', usage: 'Release' },
   { icon: '🛡️', usage: 'Security' },
 ]
