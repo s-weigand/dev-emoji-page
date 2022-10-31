@@ -44,18 +44,9 @@ jobs:
         run: |
           npm ci
 
-      - name: Install python dependencies
-        run: |
-          python -m pip install -U pip wheel
-          python -m pip install -r utils/requirements.txt
-
       - name: Build Github-Pages
         run: |
           npm run gh-pages
-
-      - name: Show index.html
-        run: |
-          python utils/post_build.py pretty-print
 
       - name: Upload bundled page
         if: success()
