@@ -20,7 +20,7 @@ export const iconList: Array<IDevIcon> = [
   { icon: '🤔', usage: 'Idea' },
   { icon: '🚧', usage: 'Maintain' },
   { icon: '🗑️', usage: 'Deprecate' },
-  { icon: '🔧', usage: 'Tooling' },
+  { icon: '🧰', usage: 'Tooling' },
   { icon: '👷', usage: 'Build system' },
   { icon: '🚇', usage: 'Infra' },
   { icon: '⬆️', usage: 'Update' },
