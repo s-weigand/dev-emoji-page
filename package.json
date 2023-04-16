@@ -45,7 +45,9 @@
     "gh-pages": "run-s clean parcel:gh-pages build:sw-prod",
     "clean": "run-s clean:del clean:mkdir",
     "clean:mkdir": "mkdir dist deploy",
-    "clean:del": "rimraf dist deploy .parcel-cache"
+    "clean:del": "rimraf dist deploy .parcel-cache",
+    "check-types": "tsc --noEmit",
+    "ct": "run-s check-types"
   },
   "author": "Sebastian Weigand",
   "license": "Apache-2.0",

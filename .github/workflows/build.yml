@@ -28,10 +28,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.8
 
       - name: Setup npm cache
         uses: actions/cache@v3
@@ -40,9 +36,14 @@ jobs:
           key: npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             npm-
+
       - name: Install npm dependencies
         run: |
           npm ci
+
+      - name: Check typing
+        run: |
+          npm run check-types
 
       - name: Build Github-Pages
         run: |
