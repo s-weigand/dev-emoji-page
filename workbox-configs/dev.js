@@ -8,4 +8,4 @@ module.exports = {
   sourcemap: true,
   mode: 'development',
   navigateFallback: 'index2.html',
-}
+};

@@ -7,4 +7,4 @@ module.exports = {
   sourcemap: false,
   mode: 'production',
   navigateFallback: 'dev-emoji-page/index.html',
-}
+};

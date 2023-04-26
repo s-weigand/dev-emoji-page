@@ -57,4 +57,4 @@ module.exports = {
     eqeqeq: 'error',
     'prefer-arrow-callback': 'error',
   },
-}
+};
