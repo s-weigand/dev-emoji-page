@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client';
 
-import { IconCards } from './card-container'
+import { IconCards } from './card-container';
 
-ReactDOM.render(<IconCards />, document.querySelector('main'))
+const root = createRoot(document.querySelector('main'));
+root.render(<IconCards />);

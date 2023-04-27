@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,13 +11,13 @@
   </head>
   <body></body>
   <noscript>Your browser does not support JavaScript!</noscript>
-  <main class="MuiPaper-root"></main>
+  <main></main>
   <script>
     if ('serviceWorker' in navigator) {
       const pageScope = window.location.host.startsWith('localhost')
         ? ''
-        : 'https://s-weigand.github.io/dev-emoji-page'
-      console.log({ pageScope })
+        : 'https://s-weigand.github.io/dev-emoji-page';
+      console.log({ pageScope });
       window.addEventListener('load', () => {
         // a lil trick so parcel won't fail to generate the path
         navigator.serviceWorker
@@ -27,13 +27,13 @@
           .then((registration) => {
             console.log(
               'Registration successful, scope is:',
-              registration.scope
-            )
+              registration.scope,
+            );
           })
           .catch((error) => {
-            console.log('Service worker registration failed, error:', error)
-          })
-      })
+            console.log('Service worker registration failed, error:', error);
+          });
+      });
     }
   </script>
 </html>

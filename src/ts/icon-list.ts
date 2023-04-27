@@ -1,6 +1,6 @@
 export interface IDevIcon {
-  icon: string
-  usage: string
+  icon: string;
+  usage: string;
 }
 
 export const iconList: Array<IDevIcon> = [
@@ -28,4 +28,4 @@ export const iconList: Array<IDevIcon> = [
   { icon: '🚀', usage: 'Release' },
   { icon: '🛡️', usage: 'Security' },
   { icon: '💥', usage: 'BREAKING' },
-]
+];
