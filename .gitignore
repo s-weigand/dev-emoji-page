@@ -4,6 +4,9 @@ distribution
 coverage
 size-plugin.json
 
+# File generated when type checking
+tsconfig.tsbuildinfo
+
 # build dirs
 dist
 deploy

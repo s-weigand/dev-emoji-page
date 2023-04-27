@@ -1,63 +1,53 @@
-import React from 'react'
+import React from 'react';
 
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardContent from '@material-ui/core/CardContent'
-import { makeStyles } from '@material-ui/core/styles'
-import Tooltip from '@material-ui/core/Tooltip'
-import Typography from '@material-ui/core/Typography'
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
 
-import { IDevIcon } from './icon-list'
+import { IDevIcon } from './icon-list';
 
-const cardSize = 6
+const cardSize = 7;
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: `${cardSize}rem`,
-    minHeight: `${cardSize}rem`,
-  },
-  title: {
-    fontSize: '0.9rem',
-  },
-  icon: {
-    fontSize: '1.7rem',
-  },
-})
-
+const cardSx = {
+  minWidth: `${cardSize}rem`,
+  minHeight: `${cardSize}rem`,
+  backgroundColor: 'inherit',
+};
 export interface IIconCardProps {
-  devIcon: IDevIcon
+  devIcon: IDevIcon;
 }
 
 export function IconCard({
   devIcon,
 }: IIconCardProps): React.ReactElement<typeof Tooltip> {
-  const classes = useStyles()
-  const { icon, usage } = devIcon
+  const { icon, usage } = devIcon;
 
   const copyIcon = () => {
     navigator.clipboard.writeText(icon).catch((err) => {
-      console.error('Error copying the emoji: ${err}')
-    })
-  }
+      console.error('Error copying the emoji: ${err}');
+    });
+  };
 
   return (
     <Tooltip title="Click to copy to clipboard.">
-      <Card className={classes.root} variant="outlined" onClick={copyIcon}>
-        <CardActionArea className={classes.root}>
+      <Card sx={cardSx} variant="outlined" onClick={copyIcon}>
+        <CardActionArea sx={cardSx}>
           <CardContent>
             <Typography
-              className={classes.title}
+              sx={{ fontSize: '0.9rem', textAlign: 'center' }}
               color="textSecondary"
               gutterBottom
             >
               {usage}
             </Typography>
-            <Typography className={classes.icon} align="center">
+            <Typography sx={{ fontSize: '1.7rem' }} align="center">
               {icon}
             </Typography>
           </CardContent>
         </CardActionArea>
       </Card>
     </Tooltip>
-  )
+  );
 }

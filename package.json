@@ -45,21 +45,33 @@
     "gh-pages": "run-s clean parcel:gh-pages build:sw-prod",
     "clean": "run-s clean:del clean:mkdir",
     "clean:mkdir": "mkdir dist deploy",
-    "clean:del": "rimraf dist deploy .parcel-cache"
+    "clean:del": "rimraf dist deploy .parcel-cache",
+    "check-types": "tsc --noEmit",
+    "ct": "run-s check-types"
   },
   "author": "Sebastian Weigand",
   "license": "Apache-2.0",
   "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true
+    "trailingComma": "all",
+    "singleQuote": true,
+    "semi": true,
+    "importOrder": [
+      "^react$",
+      "^react-dom/(.*)$",
+      "^@mui/(.*)$",
+      "^[./]"
+    ],
+    "importOrderCaseInsensitive": true,
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
   },
   "devDependencies": {
-    "@parcel/packager-raw-url": "^2.7.0",
-    "@parcel/packager-xml": "^2.7.0",
-    "@parcel/transformer-sass": "^2.7.0",
-    "@types/react": "^17.0.7",
-    "@types/react-dom": "^17.0.5",
+    "@parcel/packager-raw-url": "^2.8.3",
+    "@parcel/packager-xml": "^2.8.3",
+    "@parcel/transformer-sass": "^2.8.3",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "eslint": "^7.27.0",
@@ -67,19 +79,22 @@
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-prettier": "^3.4.0",
     "npm-run-all": "^4.1.5",
-    "parcel": "^2.7.0",
+    "parcel": "^2.8.3",
     "parcel-config-pwa-manifest": "^0.1.2",
-    "parcel-reporter-static-files-copy": "^1.3.0",
+    "parcel-reporter-static-files-copy": "^1.5.0",
     "prettier": "^2.3.0",
     "process": "^0.11.10",
     "rimraf": "^3.0.2",
-    "typescript": "^4.2.4",
+    "typescript": "^5.0.4",
     "workbox-cli": "^6.1.5"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.0",
+    "@mui/system": "^5.12.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
