@@ -13,6 +13,13 @@ import { IconCard } from './icon-card';
 import { iconList } from './icon-list';
 
 const preferredMode = (): 'light' | 'dark' => {
+  const savedTheme = localStorage.getItem('devEmojiTheme') as
+    | 'light'
+    | 'dark'
+    | null;
+  if (['light', 'dark'].includes(savedTheme) === true) {
+    return savedTheme;
+  }
   let useDarkMode = false;
   try {
     useDarkMode = window.matchMedia('(prefers-color-scheme: dark').matches;
@@ -30,7 +37,11 @@ export const IconCards = (): React.ReactElement<typeof ThemeProvider> => {
   const [mode, setMode] = useState<'light' | 'dark'>(preferredMode());
 
   const toggleColorMode = useCallback(() => {
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+    setMode((prevMode) => {
+      const newMode = prevMode === 'light' ? 'dark' : 'light';
+      localStorage.setItem('devEmojiTheme', newMode);
+      return newMode;
+    });
   }, []);
 
   const theme = useMemo(
