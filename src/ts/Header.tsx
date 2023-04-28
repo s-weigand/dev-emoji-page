@@ -25,7 +25,7 @@ export function Header(props: {
       >
         <GitHub fontSize="large" />
       </a>
-      &nbsp;Dev icons&nbsp;
+      &nbsp;Dev emojis&nbsp;
       <IconButton onClick={props.modeToggleCallback} size="large">
         {props.mode === 'dark' ? (
           <Brightness7Icon fontSize="large" />
