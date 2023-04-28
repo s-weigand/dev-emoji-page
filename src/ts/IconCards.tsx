@@ -6,7 +6,8 @@ import CardContent from '@mui/material/CardContent';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-import { IDevIcon } from './icon-list';
+import { IDevIcon } from './iconList';
+import { iconList } from './iconList';
 
 const cardSize = 7;
 
@@ -19,7 +20,7 @@ export interface IIconCardProps {
   devIcon: IDevIcon;
 }
 
-export function IconCard({
+function IconCard({
   devIcon,
 }: IIconCardProps): React.ReactElement<typeof Tooltip> {
   const { icon, usage } = devIcon;
@@ -49,5 +50,21 @@ export function IconCard({
         </CardActionArea>
       </Card>
     </Tooltip>
+  );
+}
+
+export function IconCards() {
+  return (
+    <div className="wrapper">
+      <div className="card-container">
+        {iconList.map((devIcon) => {
+          return (
+            <div className="icon-card" key={devIcon.icon}>
+              <IconCard devIcon={devIcon} />
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }

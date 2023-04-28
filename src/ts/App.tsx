@@ -9,8 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import { IconCard } from './icon-card';
-import { iconList } from './icon-list';
+import { IconCards } from './IconCards';
 
 const preferredMode = (): 'light' | 'dark' => {
   const savedTheme = localStorage.getItem('devEmojiTheme') as
@@ -33,7 +32,7 @@ const preferredMode = (): 'light' | 'dark' => {
   return useDarkMode ? 'dark' : 'light';
 };
 
-export const IconCards = (): React.ReactElement<typeof ThemeProvider> => {
+export const App = (): React.ReactElement<typeof ThemeProvider> => {
   const [mode, setMode] = useState<'light' | 'dark'>(preferredMode());
 
   const toggleColorMode = useCallback(() => {
@@ -81,17 +80,7 @@ export const IconCards = (): React.ReactElement<typeof ThemeProvider> => {
             </IconButton>
           </Typography>
           <br />
-          <div className="wrapper">
-            <div className="card-container">
-              {iconList.map((devIcon) => {
-                return (
-                  <div className="icon-card" key={devIcon.icon}>
-                    <IconCard devIcon={devIcon} />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <IconCards />
         </Paper>
       </ThemeProvider>
     </React.StrictMode>
