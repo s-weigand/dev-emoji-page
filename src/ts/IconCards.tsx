@@ -3,26 +3,27 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
+import { SxProps } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-import { IDevIcon } from './iconList';
+import { DevIcon } from './iconList';
 import { iconList } from './iconList';
 
 const cardSize = 7;
 
-const cardSx = {
+const cardSx: SxProps = {
   minWidth: `${cardSize}rem`,
   minHeight: `${cardSize}rem`,
   backgroundColor: 'inherit',
 };
-export interface IIconCardProps {
-  devIcon: IDevIcon;
+interface IconCardProps {
+  devIcon: DevIcon;
 }
 
 function IconCard({
   devIcon,
-}: IIconCardProps): React.ReactElement<typeof Tooltip> {
+}: IconCardProps): React.ReactElement<typeof Tooltip> {
   const { icon, usage } = devIcon;
 
   const copyIcon = () => {
@@ -53,7 +54,7 @@ function IconCard({
   );
 }
 
-export function IconCards() {
+export function IconCards(): React.ReactElement {
   return (
     <div className="wrapper">
       <div className="card-container">

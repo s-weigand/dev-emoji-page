@@ -1,9 +1,9 @@
-export interface IDevIcon {
+export interface DevIcon {
   icon: string;
   usage: string;
 }
 
-export const iconList: Array<IDevIcon> = [
+export const iconList: Array<DevIcon> = [
   { icon: '✔️', usage: 'Success' },
   { icon: '❌', usage: 'Fail' },
   { icon: '✨', usage: 'Feature' },
