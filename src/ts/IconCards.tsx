@@ -1,14 +1,11 @@
 import React from 'react';
 
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardContent from '@mui/material/CardContent';
 import { SxProps } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-import { DevIcon } from './iconList';
-import { iconList } from './iconList';
+import { CopyCardWrapper } from './CopyCardWrapper';
+import { DevIcon, iconList } from './iconList';
 
 const cardSize = 7;
 
@@ -23,31 +20,19 @@ function IconCard(props: {
 }): React.ReactElement<typeof Tooltip> {
   const { icon, usage } = props.devIcon;
 
-  const copyIcon = () => {
-    navigator.clipboard.writeText(icon).catch((err) => {
-      console.error('Error copying the emoji: ${err}');
-    });
-  };
-
   return (
-    <Tooltip title="Click to copy to clipboard.">
-      <Card sx={cardSx} variant="outlined" onClick={copyIcon}>
-        <CardActionArea sx={cardSx}>
-          <CardContent>
-            <Typography
-              sx={{ fontSize: '0.9rem', textAlign: 'center' }}
-              color="textSecondary"
-              gutterBottom
-            >
-              {usage}
-            </Typography>
-            <Typography sx={{ fontSize: '1.7rem' }} align="center">
-              {icon}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </Tooltip>
+    <CopyCardWrapper copyText={icon} cardSx={cardSx}>
+      <Typography
+        sx={{ fontSize: '0.9rem', textAlign: 'center' }}
+        color="textSecondary"
+        gutterBottom
+      >
+        {usage}
+      </Typography>
+      <Typography sx={{ fontSize: '1.7rem' }} align="center">
+        {icon}
+      </Typography>
+    </CopyCardWrapper>
   );
 }
 
