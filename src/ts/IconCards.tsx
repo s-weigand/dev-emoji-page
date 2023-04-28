@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import { CopyCardWrapper } from './CopyCardWrapper';
 import { DevIcon, iconList } from './iconList';
 
-const cardSize = 7;
+const cardSize = 7.1;
 
 const cardSx: SxProps = {
   minWidth: `${cardSize}rem`,
