@@ -1,14 +1,10 @@
 import React, { useCallback, useMemo, useState } from 'react';
 
-import Brightness3Icon from '@mui/icons-material/Brightness3';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import GitHub from '@mui/icons-material/GitHub';
-import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
+import { Header } from './Header';
 import { IconCards } from './IconCards';
 
 const preferredMode = (): 'light' | 'dark' => {
@@ -61,24 +57,7 @@ export const App = (): React.ReactElement<typeof ThemeProvider> => {
             minHeight: 'calc(100vh - 0.5rem)',
           }}
         >
-          <Typography color="textPrimary" variant="h3" align="center">
-            <a
-              className="gh-link"
-              rel="noreferrer"
-              href={`https://github.com/${process.env.GH_HANDEL}/dev-emoji-page`}
-              target="_blank"
-            >
-              <GitHub fontSize="large" />
-            </a>
-            &nbsp;Dev icons&nbsp;
-            <IconButton onClick={toggleColorMode} size="large">
-              {mode === 'dark' ? (
-                <Brightness7Icon fontSize="large" />
-              ) : (
-                <Brightness3Icon fontSize="large" />
-              )}
-            </IconButton>
-          </Typography>
+          <Header mode={mode} modeToggleCallback={toggleColorMode} />
           <br />
           <IconCards />
         </Paper>
