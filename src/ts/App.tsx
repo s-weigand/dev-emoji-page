@@ -4,6 +4,7 @@ import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
+import { ContentTabs } from './ContentTabs';
 import { Header } from './Header';
 import { IconCards } from './IconCards';
 
@@ -48,6 +49,7 @@ export const App = (): React.ReactElement<typeof ThemeProvider> => {
       }),
     [mode],
   );
+
   return (
     <React.StrictMode>
       <ThemeProvider theme={theme}>
@@ -59,7 +61,15 @@ export const App = (): React.ReactElement<typeof ThemeProvider> => {
         >
           <Header mode={mode} modeToggleCallback={toggleColorMode} />
           <br />
-          <IconCards />
+          <ContentTabs
+            elements={[
+              { label: '😄 Emojis', content: <IconCards /> },
+              {
+                label: '✂️ Snippets',
+                content: <span>Item Two</span>,
+              },
+            ]}
+          />
         </Paper>
       </ThemeProvider>
     </React.StrictMode>
