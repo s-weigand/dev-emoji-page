@@ -3,7 +3,7 @@ export interface DevIcon {
   usage: string;
 }
 
-export const iconList: Array<DevIcon> = [
+export const iconList: DevIcon[] = [
   { icon: '✔️', usage: 'Success' },
   { icon: '❌', usage: 'Fail' },
   { icon: '✨', usage: 'Feature' },

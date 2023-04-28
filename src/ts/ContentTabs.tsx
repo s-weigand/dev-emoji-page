@@ -4,13 +4,11 @@ import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 
-interface TabPanelProps {
+function TabPanel(props: {
   children?: React.ReactElement;
   index: number;
   value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
+}) {
   const { children, value, index } = props;
 
   return (
@@ -26,13 +24,7 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-interface LinkTabProps {
-  index: number;
-  label?: string;
-  href?: string;
-}
-
-function LinkTab(props: LinkTabProps) {
+function LinkTab(props: { index: number; label?: string; href?: string }) {
   return (
     <Tab
       component="a"
@@ -47,13 +39,13 @@ function LinkTab(props: LinkTabProps) {
   );
 }
 
-interface IContentTabProps {
+interface ContentTabProps {
   label: string;
   content: React.ReactElement;
 }
 
 export function ContentTabs(props: {
-  elements: IContentTabProps[];
+  elements: ContentTabProps[];
 }): React.ReactElement {
   const [tabIndex, setTabIndex] = useState(0);
 

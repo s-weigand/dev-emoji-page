@@ -17,14 +17,11 @@ const cardSx: SxProps = {
   minHeight: `${cardSize}rem`,
   backgroundColor: 'inherit',
 };
-interface IconCardProps {
-  devIcon: DevIcon;
-}
 
-function IconCard({
-  devIcon,
-}: IconCardProps): React.ReactElement<typeof Tooltip> {
-  const { icon, usage } = devIcon;
+function IconCard(props: {
+  devIcon: DevIcon;
+}): React.ReactElement<typeof Tooltip> {
+  const { icon, usage } = props.devIcon;
 
   const copyIcon = () => {
     navigator.clipboard.writeText(icon).catch((err) => {
