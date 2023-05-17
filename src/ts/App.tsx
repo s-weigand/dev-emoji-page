@@ -7,6 +7,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { ContentTabs } from './ContentTabs';
 import { Header } from './Header';
 import { IconCards } from './IconCards';
+import { SnippetCards } from './SnippetCards';
 
 const preferredMode = (): 'light' | 'dark' => {
   const savedTheme = localStorage.getItem('devEmojiTheme') as
@@ -66,7 +67,7 @@ export const App = (): React.ReactElement<typeof ThemeProvider> => {
               { label: '😄 Emojis', content: <IconCards /> },
               {
                 label: '✂️ Snippets',
-                content: <span>Item Two</span>,
+                content: <SnippetCards />,
               },
             ]}
           />

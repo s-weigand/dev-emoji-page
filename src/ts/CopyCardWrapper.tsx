@@ -7,7 +7,7 @@ import { SxProps } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 
 export function CopyCardWrapper(props: {
-  children: React.ReactElement[];
+  children: React.ReactElement | React.ReactElement[];
   copyText: string;
   cardSx?: SxProps;
 }): React.ReactElement<typeof Tooltip> {
