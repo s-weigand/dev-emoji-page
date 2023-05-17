@@ -42,7 +42,7 @@ export function IconCards(): React.ReactElement {
       <div className="card-container">
         {iconList.map((devIcon) => {
           return (
-            <div className="icon-card" key={devIcon.icon}>
+            <div key={devIcon.icon}>
               <IconCard devIcon={devIcon} />
             </div>
           );
