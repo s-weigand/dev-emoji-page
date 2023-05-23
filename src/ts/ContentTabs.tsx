@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
+import { Tooltip } from '@mui/material';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
@@ -26,16 +27,18 @@ function TabPanel(props: {
 
 function LinkTab(props: { index: number; label?: string; href?: string }) {
   return (
-    <Tab
-      component="a"
-      onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        event.preventDefault();
-      }}
-      sx={{ fontSize: '1.5rem' }}
-      id={`simple-tab-${props.index}`}
-      aria-controls={`simple-tabpanel-${props.index}`}
-      {...props}
-    />
+    <Tooltip title={`Press '${props.index + 1}' to switch to this tab`}>
+      <Tab
+        component="a"
+        onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+          event.preventDefault();
+        }}
+        sx={{ fontSize: '1.5rem' }}
+        id={`simple-tab-${props.index}`}
+        aria-controls={`simple-tabpanel-${props.index}`}
+        {...props}
+      />
+    </Tooltip>
   );
 }
 
@@ -52,6 +55,15 @@ export function ContentTabs(props: {
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setTabIndex(newValue);
   };
+  useEffect(() => {
+    document.addEventListener('keypress', (event) => {
+      const value = Number(event.key);
+      if (value <= props.elements.length) {
+        setTabIndex(value - 1);
+      }
+    });
+  }, []);
+
   return (
     <>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
