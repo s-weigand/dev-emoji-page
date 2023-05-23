@@ -12,7 +12,7 @@ To make it your own, you can simply:
 
 - Fork this repo
 - Replace `config.gh_handle` in `package.json` with your handle
-- Change the [`iconList`](https://github.com/s-weigand/dev-emoji-page/blob/main/src/ts/icon-list.ts)
+- Change the [`iconList`](./src/ts/iconList.ts) and/or [`snippetList`](./src/ts/snippetList.ts)
 - Push it to your `main` branch and wait for the CI to deploy you gh-pages
 
 # Development

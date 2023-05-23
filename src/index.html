@@ -17,7 +17,6 @@
       const pageScope = window.location.host.startsWith('localhost')
         ? ''
         : 'https://s-weigand.github.io/dev-emoji-page';
-      console.log({ pageScope });
       window.addEventListener('load', () => {
         // a lil trick so parcel won't fail to generate the path
         navigator.serviceWorker
