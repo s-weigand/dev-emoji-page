@@ -4,11 +4,11 @@ export interface Snippet {
 }
 
 export const snippetList: Snippet[] = [
-  { content: '🚧📚 Added change to changelog' },
-  { content: '⬆️ Update dependencies' },
-  { content: '⬆️📚 Updated docs' },
+  { content: "🚧📚 Added change to changelog" },
+  { content: "⬆️ Update dependencies" },
+  { content: "⬆️📚 Updated docs" },
   {
-    title: '🔍 Details (Markdown)',
+    title: "🔍 Details (Markdown)",
     content: `\
 <details>
   <summary>
@@ -19,4 +19,4 @@ export const snippetList: Snippet[] = [
   \`\`\`
 </details>`,
   },
-];
+] as const;
