@@ -1,11 +1,11 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: '/'
+    directory: "/"
     schedule:
       interval: weekly
       day: friday
-      time: '20:00'
+      time: "20:00"
       timezone: Europe/Amsterdam
     open-pull-requests-limit: 20
     reviewers:
@@ -17,15 +17,15 @@ updates:
         update-types:
           - minor
           - patch
-    rebase-strategy: 'disabled'
+    rebase-strategy: "disabled"
 
   # Maintain dependencies for GitHub Actions
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
-      interval: 'weekly'
+      interval: "weekly"
       day: friday
-      time: '20:00'
+      time: "20:00"
       timezone: Europe/Amsterdam
     reviewers:
       - s-weigand
@@ -36,4 +36,4 @@ updates:
         update-types:
           - minor
           - patch
-    rebase-strategy: 'disabled'
+    rebase-strategy: "disabled"

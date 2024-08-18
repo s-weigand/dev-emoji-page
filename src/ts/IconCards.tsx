@@ -1,18 +1,18 @@
-import React from 'react';
+import type React from "react";
 
-import { SxProps } from '@mui/material/styles';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
+import type Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import type { SxProps } from "@mui/material/styles";
 
-import { CopyCardWrapper } from './CopyCardWrapper';
-import { DevIcon, iconList } from './iconList';
+import { CopyCardWrapper } from "./CopyCardWrapper";
+import { type DevIcon, iconList } from "./iconList";
 
 const cardSize = 7.1;
 
 const cardSx: SxProps = {
   minWidth: `${cardSize}rem`,
   minHeight: `${cardSize}rem`,
-  backgroundColor: 'inherit',
+  backgroundColor: "inherit",
 };
 
 function IconCard(props: {
@@ -23,13 +23,13 @@ function IconCard(props: {
   return (
     <CopyCardWrapper copyText={icon} cardSx={cardSx}>
       <Typography
-        sx={{ fontSize: '0.9rem', textAlign: 'center' }}
+        sx={{ fontSize: "0.9rem", textAlign: "center" }}
         color="textSecondary"
         gutterBottom
       >
         {usage}
       </Typography>
-      <Typography sx={{ fontSize: '1.7rem' }} align="center">
+      <Typography sx={{ fontSize: "1.7rem" }} align="center">
         {icon}
       </Typography>
     </CopyCardWrapper>

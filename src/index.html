@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,24 +13,24 @@
   <noscript>Your browser does not support JavaScript!</noscript>
   <main></main>
   <script>
-    if ('serviceWorker' in navigator) {
-      const pageScope = window.location.host.startsWith('localhost')
-        ? ''
-        : 'https://s-weigand.github.io/dev-emoji-page';
-      window.addEventListener('load', () => {
+    if ("serviceWorker" in navigator) {
+      const pageScope = window.location.host.startsWith("localhost")
+        ? ""
+        : "https://s-weigand.github.io/dev-emoji-page";
+      window.addEventListener("load", () => {
         // a lil trick so parcel won't fail to generate the path
         navigator.serviceWorker
-          .register([pageScope + '/sw', '.js'].join(''), {
-            scope: pageScope + '/',
+          .register([pageScope + "/sw", ".js"].join(""), {
+            scope: pageScope + "/",
           })
           .then((registration) => {
             console.log(
-              'Registration successful, scope is:',
+              "Registration successful, scope is:",
               registration.scope,
             );
           })
           .catch((error) => {
-            console.log('Service worker registration failed, error:', error);
+            console.log("Service worker registration failed, error:", error);
           });
       });
     }
