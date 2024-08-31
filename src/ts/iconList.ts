@@ -21,6 +21,7 @@ export const iconList: DevIcon[] = [
   { icon: "🚧", usage: "Maintain" },
   { icon: "🗑️", usage: "Deprecate" },
   { icon: "🧰", usage: "Tooling" },
+  { icon: "⚙️", usage: "Config" },
   { icon: "👷", usage: "Build system" },
   { icon: "📦", usage: "Packaging" },
   { icon: "🚇", usage: "Infra" },
