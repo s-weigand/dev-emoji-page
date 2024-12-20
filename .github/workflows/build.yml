@@ -58,6 +58,20 @@ jobs:
           name: deploy
           path: deploy
 
+      - name: Install uv
+        if: github.event_name == 'pull_request'
+        uses: astral-sh/setup-uv@v4
+
+      - name: Upload page preview
+        if: github.event_name == 'pull_request'
+        env:
+          SMOKESHOW_GITHUB_STATUS_DESCRIPTION: Preview
+          SMOKESHOW_AUTH_KEY: ${{ secrets.SMOKESHOW_AUTH_KEY }}
+          SMOKESHOW_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SMOKESHOW_GITHUB_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          uvx smokeshow upload deploy
+
   deploy-page:
     if: github.event_name == 'push' && github.event.ref == 'refs/heads/main'
     needs: [build]
