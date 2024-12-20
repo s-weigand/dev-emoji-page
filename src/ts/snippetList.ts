@@ -4,9 +4,9 @@ export interface Snippet {
 }
 
 export const snippetList: Snippet[] = [
-  { content: "🚧📚 Added change to changelog" },
+  { content: "🚧📚 Add change to changelog" },
   { content: "⬆️ Update dependencies" },
-  { content: "⬆️📚 Updated docs" },
+  { content: "⬆️📚 Update docs" },
   {
     title: "🔍 Details (Markdown)",
     content: `\
