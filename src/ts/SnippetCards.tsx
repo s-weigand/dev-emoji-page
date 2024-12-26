@@ -14,7 +14,7 @@ const SnippetCard = (props: {
   return (
     <CopyCardWrapper copyText={content} cardSx={{ backgroundColor: "inherit", flexGrow: 1 }}>
       <Typography
-        sx={{ fontSize: "0.9rem", textAlign: "center" }}
+        sx={{ fontSize: "1.4rem", textAlign: "center" }}
         color="textSecondary"
         gutterBottom
       >
