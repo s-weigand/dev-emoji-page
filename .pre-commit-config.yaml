@@ -7,12 +7,10 @@ repos:
       - id: mixed-line-ending
         args: [--fix=lf]
 
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
+  - repo: https://github.com/pycontribs/mirrors-prettier
+    rev: v3.5.3
     hooks:
       - id: prettier
-        additional_dependencies:
-          - "prettier@3.3.3"
         exclude_types:
           - "javascript"
           - "ts"
@@ -23,13 +21,13 @@ repos:
         exclude: "\\.jsonc"
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.3.0
+    rev: v2.4.1
     hooks:
       - id: codespell
         files: '\.(html|tsx?|s?css|md)$'
 
   - repo: https://github.com/biomejs/pre-commit
-    rev: "v0.5.0" # Use the sha / tag you want to point at
+    rev: "v0.6.1"
     hooks:
       - id: biome-check
         additional_dependencies: ["@biomejs/biome@1.9.4"]
