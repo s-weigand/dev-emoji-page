@@ -62,7 +62,7 @@ jobs:
 
       - name: Install uv
         if: github.event_name == 'pull_request'
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
 
       - name: Build preview
         if: github.event_name == 'pull_request'
