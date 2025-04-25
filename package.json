@@ -48,7 +48,7 @@
     "@parcel/packager-xml": "^2.14.4",
     "@parcel/transformer-sass": "^2.14.4",
     "@types/node": "^22.9.0",
-    "@types/react": "^19.1.1",
+    "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "npm-run-all": "^4.1.5",
     "parcel": "^2.14.4",
