@@ -43,7 +43,7 @@
   "author": "Sebastian Weigand",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.0.6",
     "@parcel/packager-raw-url": "^2.15.4",
     "@parcel/packager-xml": "^2.15.4",
     "@parcel/transformer-sass": "^2.15.4",
