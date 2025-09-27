@@ -6,6 +6,6 @@ module.exports = {
   skipWaiting: true,
   sourcemap: false,
   mode: "production",
-  navigateFallback: "dev-emoji-page/index.html",
+  navigateFallback: "index.html",
   runtimeCaching: [{ urlPattern: "*", handler: "NetworkFirst" }],
 };
