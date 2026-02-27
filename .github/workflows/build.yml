@@ -86,7 +86,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download  bundled page
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: deploy
           path: deploy
