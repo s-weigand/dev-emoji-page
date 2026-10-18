@@ -1,9 +1,8 @@
 import type React from "react";
 
+import type { SxProps } from "@mui/material/styles";
 import type Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import type { SxProps } from "@mui/material/styles";
-
 import { CopyCardWrapper } from "./CopyCardWrapper";
 import { type DevIcon, iconList } from "./iconList";
 
@@ -15,9 +14,7 @@ const cardSx: SxProps = {
   backgroundColor: "inherit",
 };
 
-function IconCard(props: {
-  devIcon: DevIcon;
-}): React.ReactElement<typeof Tooltip> {
+function IconCard(props: { devIcon: DevIcon }): React.ReactElement<typeof Tooltip> {
   const { icon, usage } = props.devIcon;
 
   return (

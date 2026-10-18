@@ -6,11 +6,7 @@ import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 
-function TabPanel(props: {
-  children?: React.ReactElement;
-  index: number;
-  value: number;
-}) {
+function TabPanel(props: { children?: React.ReactElement; index: number; value: number }) {
   const { children, value, index } = props;
 
   return (
@@ -48,12 +44,10 @@ interface ContentTabProps {
   content: React.ReactElement;
 }
 
-export function ContentTabs(props: {
-  elements: ContentTabProps[];
-}): React.ReactElement {
+export function ContentTabs(props: { elements: ContentTabProps[] }): React.ReactElement {
   const [tabIndex, setTabIndex] = useState(0);
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setTabIndex(newValue);
   };
   // biome-ignore lint/correctness/useExhaustiveDependencies: This should only run on first render
