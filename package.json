@@ -13,9 +13,17 @@
     "theme": "#424242",
     "generateIconOptions": {
       "baseIcon": "src/assets/icon.png",
-      "sizes": [144, 192, 384, 512],
+      "sizes": [
+        144,
+        192,
+        384,
+        512
+      ],
       "genFavicons": true,
-      "purpose": ["maskable", "any"],
+      "purpose": [
+        "maskable",
+        "any"
+      ],
       "development": {
         "disabled": true
       },

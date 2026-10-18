@@ -2,13 +2,10 @@ import type React from "react";
 
 import type Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-
 import { CopyCardWrapper } from "./CopyCardWrapper";
 import { type Snippet, snippetList } from "./snippetList";
 
-const SnippetCard = (props: {
-  snippet: Snippet;
-}): React.ReactElement<typeof Tooltip> => {
+const SnippetCard = (props: { snippet: Snippet }): React.ReactElement<typeof Tooltip> => {
   const { title, content } = props.snippet;
 
   return (
