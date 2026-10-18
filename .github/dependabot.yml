@@ -8,13 +8,18 @@ updates:
       time: "20:00"
       timezone: Europe/Amsterdam
     open-pull-requests-limit: 20
-    reviewers:
-      - s-weigand
     assignees:
       - s-weigand
     groups:
       runtime-dependencies:
         update-types:
+          - minor
+          - patch
+      mui:
+        patterns:
+          - "@mui/**"
+        update-types:
+          - major
           - minor
           - patch
     rebase-strategy: "disabled"
@@ -27,8 +32,6 @@ updates:
       day: friday
       time: "20:00"
       timezone: Europe/Amsterdam
-    reviewers:
-      - s-weigand
     assignees:
       - s-weigand
     groups:
